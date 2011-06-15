@@ -1,7 +1,12 @@
 Ext.define('DEMO.model.VendorListModel', {
     extend	: 'Ext.data.Model',
     fields	: [
-		'vendors_id', 'vendor_name', 'start_date',
+		'vendors_id', 'vendor_name', 'payment_terms', 'start_date',
+		{
+			name		: 'start_date',
+			type		:'date',
+			dateFormat	: 'Y-m-d'
+		},
 		{
 			name		: 'last_order',
 			type		:'date',
@@ -12,14 +17,12 @@ Ext.define('DEMO.model.VendorListModel', {
 	proxy	: {
 		type			: 'ajax',
 		url				: 'vendor_list.php',
-		extraParams		: {
-			total: 50
-		},
 
 		reader			: {
 			type			: 'json',
 			root			: 'vendors',
-			totalProperty	: 'totalCount'
+			totalProperty	: 'totalCount',
+			successProperty	: 'success'
 		},
 	
 		simpleSortMode	: true

@@ -5,12 +5,5 @@ Ext.define('DEMO.store.VendorListStore', {
 	pageSize: 50,
 	autoLoad: false,
 
-	remoteSort: true,
-	sorters: {
-		property: 'vendor_name',
-		direction: 'ASC'
-	},
-
-
-
+	remoteSort: false,
 });
