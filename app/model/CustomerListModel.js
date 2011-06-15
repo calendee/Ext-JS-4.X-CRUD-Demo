@@ -3,6 +3,11 @@ Ext.define('DEMO.model.CustomerListModel', {
     fields	: [
 		'customers_id', 'customer_name', 'start_date',
 		{
+			name		: 'start_date',
+			type		:'date',
+			dateFormat	: 'Y-m-d'
+		},
+		{
 			name		: 'last_order',
 			type		:'date',
 			dateFormat	: 'Y-m-d'
@@ -12,14 +17,12 @@ Ext.define('DEMO.model.CustomerListModel', {
 	proxy	: {
 		type			: 'ajax',
 		url				: 'customer_list.php',
-		extraParams		: {
-			total: 50
-		},
 
 		reader			: {
 			type			: 'json',
 			root			: 'customers',
-			totalProperty	: 'totalCount'
+			totalProperty	: 'totalCount',
+			successProperty	: 'success'
 		},
 	
 		simpleSortMode	: true

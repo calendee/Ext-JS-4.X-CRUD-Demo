@@ -1,16 +1,13 @@
 Ext.define('DEMO.store.CustomerListStore', {
-    extend: 'Ext.data.Store',
-	model: 'DEMO.model.CustomerListModel',
+    extend	: 'Ext.data.Store',
+	model	: 'DEMO.model.CustomerListModel',
 
-	pageSize: 50,
-	autoLoad: false,
+	pageSize	: 50,
+	autoLoad	: true,
 
-	remoteSort: true,
-	sorters: {
+	remoteSort	: true,
+	sorters		: {
 		property: 'customer_name',
 		direction: 'ASC'
-	},
-
-
-
+	}
 });
