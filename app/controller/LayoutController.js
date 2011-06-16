@@ -23,6 +23,7 @@ Ext.define('DEMO.controller.LayoutController', {
 
 		var lists_container = Ext.ComponentQuery.query('ListsContainer');
 
+		// Alternate which list is visible in the lists container
 		switch(tabXType)
 		{
 			case 'CustomerManagement':
