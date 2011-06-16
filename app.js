@@ -6,7 +6,8 @@ Ext.application({
     controllers: [
 		'LayoutController',
 		'CustomerListController',
-		'VendorListController'
+		'VendorListController',
+		'CustomerAddController'
     ],
 
     launch: function() {
