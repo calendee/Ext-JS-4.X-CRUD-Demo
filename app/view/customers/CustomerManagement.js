@@ -8,11 +8,11 @@ Ext.define('DEMO.view.customers.CustomerManagement' ,{
     autoScroll  : true,
 
 	items 		: [
+		{
+			xtype	: 'CustomerAdd'
+		},
 		// {
-			// xtype	: 'CustomerList'
-		// },
-		// {
-			// xtype	: 'CustmomerOrders'
+			// xtype	: 'CustomerEdit'
 		// }
 	],
 
