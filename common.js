@@ -41,3 +41,64 @@ function enableToolbarButtons(toolbar)
     });
     
 }
+
+/**
+ * Enable or disable all elements within the received array.
+ * 
+ * Elements of string can be Ext components or HTML ids
+ *
+ * @param Array items (array of strings or objects)
+ * @param String action (enable or disable)
+ * 
+ * @returns void
+ */
+function toggleEnabled(items, action)
+{
+    items.forEach( function(item) {
+        if( ! Ext.isObject(item) )
+        {
+            // Query by alias
+            var el = Ext.ComponentQuery.query(item);
+            
+            if( ! Ext.isEmpty(el) )
+            {
+                if( action == 'disable' )
+                {
+                	el[0].disable();	
+                } else
+                	{
+                		el[0].enable();
+                	}
+                
+            } else
+                {
+                    // Query by id
+                    var el = Ext.ComponentQuery.query('#' + item);
+
+                    if( ! Ext.isEmpty(el) )
+                    {
+		                if( action == 'disable' )
+		                {
+		                	el[0].disable();	
+		                } else
+		                	{
+		                		el[0].enable();
+		                	}
+
+                    } else
+                        {
+                            console.log('Failed to query ' + item + ' in redisableItems');
+                        }
+                }
+        } else
+            {
+                if( action == 'enable' )
+                {
+                	el[0].disable();	
+                } else
+                	{
+                		el[0].enable();
+                	}
+            }
+    });
+}
