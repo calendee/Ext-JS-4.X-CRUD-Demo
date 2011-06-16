@@ -18,5 +18,8 @@ Ext.application({
 					{ xtype: 'AppHeader' }
 				]
         });
+        
+        DEMO.selectedCustomersId	= 0;
+        DEMO.selectedVendorsId		= 0;
     }
 });
