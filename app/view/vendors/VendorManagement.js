@@ -9,10 +9,10 @@ Ext.define('DEMO.view.vendors.VendorManagement' ,{
 
 	items 		: [
 		// {
-			// xtype	: 'CustomerEdit'
+			// xtype	: 'VendorAdd'
 		// },
 		// {
-			// xtype	: 'CustmomerOrders'
+			// xtype	: 'VenderEdit'
 		// }
 	],
 
