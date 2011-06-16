@@ -9,12 +9,17 @@ Ext.define('DEMO.controller.VendorListController', {
     ],
 
     init: function() {
-
         this.control({
 			'VendorList' : {
-				itemclick: this.vendorClicked
+				itemclick	: this.vendorClicked,
+				show		: this.loadList
 			}
         });
+    },
+
+	// Reload the list every time it is shown
+    loadList : function(list) {
+    	list.getStore().load();
     },
 
 

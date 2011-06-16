@@ -12,9 +12,15 @@ Ext.define('DEMO.controller.CustomerListController', {
 
         this.control({
 			'CustomerList' : {
-				itemclick: this.customerClicked
+				itemclick	: this.customerClicked,
+				show		: this.loadList
 			}
         });
+    },
+
+	// Reload the list every time it is shown
+    loadList : function(list) {
+    	list.getStore().load();
     },
 
 
