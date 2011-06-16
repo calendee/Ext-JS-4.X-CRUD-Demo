@@ -1,25 +1,26 @@
 Ext.define('DEMO.controller.LayoutController', {
-    extend: 'Ext.app.Controller',
-    views: [
+    extend	: 'Ext.app.Controller',
+    views	: [
 		'layout.AppHeader',
 		'layout.ListsContainer',
 		'layout.ManagementArea',
 		'customers.CustomerManagement',
 		'customers.CustomerManagementToolbar',
-		'vendors.VendorManagement'
+		'vendors.VendorManagement',
+		'vendors.VendorManagementToolbar'
     ],
 
-    init: function() {
+    init	: function() {
 
         this.control({
-			'ManagementArea' : {
+			'ManagementArea'	: {
 				tabchange: this.tabChanged
 			}
         });
     },
 
 
-	tabChanged: function(tabPanel, tab) {
+	tabChanged	: function(tabPanel, tab) {
 		tabXType = tab.getXType();
 
 		var lists_container = Ext.ComponentQuery.query('ListsContainer');

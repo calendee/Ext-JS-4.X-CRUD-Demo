@@ -1,13 +1,13 @@
 Ext.define('DEMO.view.vendors.VendorManagement' ,{
-    extend	: 'Ext.panel.Panel',
-    alias : 'widget.VendorManagement',
+    extend		: 'Ext.panel.Panel',
+    alias 		: 'widget.VendorManagement',
 
-	layout	: 'card',
-	activeItem: 0,
+	layout		: 'card',
+	activeItem	: 0,
 	
     autoScroll  : true,
 
-	items : [
+	items 		: [
 		// {
 			// xtype	: 'CustomerEdit'
 		// },
@@ -18,12 +18,12 @@ Ext.define('DEMO.view.vendors.VendorManagement' ,{
 
 	// Add the top toolbar
 	dockedItems : [{
-		// xtype: 'CustomerMgmtToolbar',
-		// dock: 'top'
+		xtype	: 'VendorManagementToolbar',
+		dock	: 'top'
 	}],
 
 	
-    initComponent: function() {
+    initComponent	: function() {
         this.callParent(arguments);
     }
 	

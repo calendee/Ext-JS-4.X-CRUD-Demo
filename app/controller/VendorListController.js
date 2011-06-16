@@ -1,14 +1,15 @@
 Ext.define('DEMO.controller.VendorListController', {
-    extend: 'Ext.app.Controller',
+    extend	: 'Ext.app.Controller',
 
-    stores: ['VendorListStore'],
-    models: ['VendorListModel'],
+    stores	: ['VendorListStore'],
+    models	: ['VendorListModel'],
 
-    views: [
+    views	: [
 		'vendors.VendorList'
     ],
 
-    init: function() {
+    init	: function() {
+    	
         this.control({
 			'VendorList' : {
 				itemclick	: this.vendorClicked,
@@ -23,9 +24,11 @@ Ext.define('DEMO.controller.VendorListController', {
     },
 
 
-	vendorClicked: function(grid, record) {
+	vendorClicked	: function(grid, record) {
 
-		alert('You clicked a record');
+		enableToolbarButtons('VendorManagementToolbar');
+		
+		DEMO.selectedVendorsId = record.data.vendors_id;
 		
 		// // Get the selected operators id and update all the operators forms.
 		// // Keep it in name space for use by other non-form based events
