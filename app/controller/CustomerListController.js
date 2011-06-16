@@ -1,15 +1,14 @@
 Ext.define('DEMO.controller.CustomerListController', {
-    extend: 'Ext.app.Controller',
+    extend	: 'Ext.app.Controller',
 
-    stores: ['CustomerListStore'],
-    models: ['CustomerListModel'],
+    stores	: ['CustomerListStore'],
+    models	: ['CustomerListModel'],
 
-    views: [
+    views	: [
 		'customers.CustomerList'
     ],
 
-    init: function() {
-
+    init	: function() {
         this.control({
 			'CustomerList' : {
 				itemclick	: this.customerClicked,
@@ -19,7 +18,7 @@ Ext.define('DEMO.controller.CustomerListController', {
     },
 
 	// Reload the list every time it is shown
-    loadList : function(list) {
+    loadList	: function(list) {
     	list.getStore().load();
     },
 
