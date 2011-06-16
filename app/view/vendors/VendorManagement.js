@@ -8,9 +8,9 @@ Ext.define('DEMO.view.vendors.VendorManagement' ,{
     autoScroll  : true,
 
 	items 		: [
-		// {
-			// xtype	: 'VendorAdd'
-		// },
+		{
+			xtype	: 'VendorAdd'
+		},
 		// {
 			// xtype	: 'VenderEdit'
 		// }
