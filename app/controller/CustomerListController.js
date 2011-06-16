@@ -26,7 +26,9 @@ Ext.define('DEMO.controller.CustomerListController', {
 
 	customerClicked: function(grid, record) {
 
-		alert('You clicked a record');
+		enableToolbarButtons('CustomerManagementToolbar');
+		
+		DEMO.selectedCustomersId = record.data.customers_id;
 		
 		// // Get the selected operators id and update all the operators forms.
 		// // Keep it in name space for use by other non-form based events

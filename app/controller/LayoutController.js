@@ -5,6 +5,7 @@ Ext.define('DEMO.controller.LayoutController', {
 		'layout.ListsContainer',
 		'layout.ManagementArea',
 		'customers.CustomerManagement',
+		'customers.CustomerManagementToolbar',
 		'vendors.VendorManagement'
     ],
 

@@ -1,13 +1,13 @@
 Ext.define('DEMO.view.customers.CustomerManagement' ,{
-    extend	: 'Ext.panel.Panel',
-    alias : 'widget.CustomerManagement',
+    extend		: 'Ext.panel.Panel',
+    alias		: 'widget.CustomerManagement',
 
-	layout	: 'card',
-	activeItem: 0,
+	layout		: 'card',
+	activeItem	: 0,
 	
     autoScroll  : true,
 
-	items : [
+	items 		: [
 		// {
 			// xtype	: 'CustomerList'
 		// },
@@ -18,14 +18,12 @@ Ext.define('DEMO.view.customers.CustomerManagement' ,{
 
 	// Add the top toolbar
 	dockedItems : [{
-		// xtype: 'CustomerMgmtToolbar',
-		// dock: 'top'
+		xtype: 'CustomerManagementToolbar',
+		dock: 'top'
 	}],
 
 	
-    initComponent: function() {
+    initComponent	: function() {
         this.callParent(arguments);
     }
-	
-	
 });
