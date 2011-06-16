@@ -10,11 +10,11 @@ Ext.define('DEMO.controller.CustomerAddController', {
 
     init		: function() {
         this.control({
-        	'CustomerAdd  #add-operator-save' : {
+        	'CustomerAdd  #add-customer-save' : {
         		click : this.saveClicked
         	},
         	
-        	'CustomerAdd  #add-operator-cancel' : {
+        	'CustomerAdd  #add-customer-cancel' : {
         		click : this.cancelClicked
         	},
 
@@ -39,7 +39,7 @@ Ext.define('DEMO.controller.CustomerAddController', {
 	// Control what happens when the form is dirty or clean
     formDirty		: function(form, dirty) {
 		var disableItems	= ['CustomerList','VendorManagement','CustomerManagementToolbar'];	
-		var enableItems		= ['add-operator-save', 'add-operator-cancel'];	
+		var enableItems		= ['add-customer-save', 'add-customer-cancel'];	
         
         if(form.isDirty())
         {

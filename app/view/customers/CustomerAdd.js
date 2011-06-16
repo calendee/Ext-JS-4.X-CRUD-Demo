@@ -28,15 +28,15 @@ Ext.define('DEMO.view.customers.CustomerAdd',{
             items   : [
                 {
                     text    	: 'Save',
-                    id			: 'add-operator-save',
-                    tooltip		: 'Save this new operator.',
+                    id			: 'add-customer-save',
+                    tooltip		: 'Save this new customer.',
                     action  	: 'save',
                     disabled	: true
                 },
                 {
                     text		: 'Cancel',
-                    tooltip 	: 'Cancel adding this operator.',
-                    id			: 'add-operator-cancel',
+                    tooltip 	: 'Cancel adding this customer.',
+                    id			: 'add-customer-cancel',
                     disabled	: true,
                 }
             ]
