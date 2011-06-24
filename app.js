@@ -1,3 +1,12 @@
+// enable and configure loader
+Ext.Loader.setConfig({
+	 enabled:true
+	,paths:{
+		 Ext:'ext/src'
+		,My:'app'
+	}
+});
+
 Ext.application({
     name: 'DEMO', // Global namespace
 
