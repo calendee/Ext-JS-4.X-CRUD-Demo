@@ -55,6 +55,7 @@ function enableToolbarButtons(toolbar)
 function toggleEnabled(items, action)
 {
     items.forEach( function(item) {
+    	
         if( ! Ext.isObject(item) )
         {
             // Query by alias
@@ -62,14 +63,7 @@ function toggleEnabled(items, action)
             
             if( ! Ext.isEmpty(el) )
             {
-                if( action == 'disable' )
-                {
-                	el[0].disable();	
-                } else
-                	{
-                		el[0].enable();
-                	}
-                
+            	toggleEnabled(el, action);
             } else
                 {
                     // Query by id
@@ -77,14 +71,7 @@ function toggleEnabled(items, action)
 
                     if( ! Ext.isEmpty(el) )
                     {
-		                if( action == 'disable' )
-		                {
-		                	el[0].disable();	
-		                } else
-		                	{
-		                		el[0].enable();
-		                	}
-
+		            	toggleEnabled(el, action);
                     } else
                         {
                             console.log('Failed to query ' + item + ' in redisableItems');
@@ -94,10 +81,10 @@ function toggleEnabled(items, action)
             {
                 if( action == 'enable' )
                 {
-                	el[0].disable();	
+                	item.enable();	
                 } else
                 	{
-                		el[0].enable();
+                		item.disable();
                 	}
             }
     });
