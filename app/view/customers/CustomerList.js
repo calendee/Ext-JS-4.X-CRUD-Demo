@@ -8,7 +8,7 @@ Ext.define('DEMO.view.customers.CustomerList' ,{
         this.columns = [
             { header: 'Customer Name',	dataIndex: 'customer_name',	flex: 2 },
             {
-            	header: 'Last Order',	dataIndex: 'start_date',	flex: 1, 
+            	header: 'Customer Since',	dataIndex: 'start_date',	flex: 1, 
             	renderer: Ext.util.Format.dateRenderer('Y-m-d')
             },
             {
