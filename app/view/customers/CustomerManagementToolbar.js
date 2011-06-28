@@ -23,7 +23,7 @@ Ext.define('DEMO.view.customers.CustomerManagementToolbar' ,{
 				// Disable this button while in use
 				this.setDisabled(true);
 				
-				customer_layout.setActiveItem('customer-add');
+				custLayout.setActiveItem('customer-add');
 
 			}
         },
@@ -37,13 +37,13 @@ Ext.define('DEMO.view.customers.CustomerManagementToolbar' ,{
 
 				// Disable this button while in use
 				this.setDisabled(true);
+
+				custLayout.setActiveItem('customer-edit');
 				
-				customer_layout.setActiveItem('default-gtt-container');
-				
-				var dflt_gtt = Ext.ComponentQuery.query('DefaultGttContainer');
-				Ext.Array.each(dflt_gtt, function(cmp){
-					cmp.enable();
-				});
+				// var customer_edit = Ext.ComponentQuery.query('CustomerEdit');
+				// Ext.Array.each(customer_edit, function(cmp){
+					// cmp.enable();
+				// });
 
 			}
         }
@@ -54,8 +54,8 @@ Ext.define('DEMO.view.customers.CustomerManagementToolbar' ,{
     },
 	
 	afterRender		: function() {
-		var customer_content_pnl = Ext.ComponentQuery.query('CustomerManagement');
-		customer_layout = customer_content_pnl[0].getLayout();
+		custPanel = Ext.ComponentQuery.query('CustomerManagement');
+		custLayout = custPanel[0].getLayout();
 	}
     
 });
