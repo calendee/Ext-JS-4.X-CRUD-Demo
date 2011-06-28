@@ -1,17 +1,24 @@
 Ext.define('DEMO.view.customers.CustomerAdd',{
-    extend  :   'Ext.form.Panel',
-    alias   :   'widget.CustomerAdd',
+    extend  : 'Ext.form.Panel',
+    alias   : 'widget.CustomerAdd',
 
     title   : 'Add Customer',
 
     bodyPadding : 10,
-    
+
     items   : [
+        {
+            xtype           : 'hiddenfield',
+            name            : 'customers_id',
+            id              : 'customers_id',
+            value			: 0
+        },
         {
             xtype           : 'textfield',
             name            : 'customer_name',
             id              : 'customer_name',
             fieldLabel      : 'Customer Name',
+            emptyText		: 'Enter the new customer\'s name here',
             size            : 55,
             allowBlank      : false,
             dirtyCls        : 'dirtyfield',
@@ -20,29 +27,21 @@ Ext.define('DEMO.view.customers.CustomerAdd',{
             margin          : '0 10 0 0'
         }                    
     ],
-
-    dockedItems : [
-        {
-            xtype   : 'toolbar',
-            dock    : 'top',
-            items   : [
-                {
-                    text    	: 'Save',
-                    id			: 'add-customer-save',
-                    tooltip		: 'Save this new customer.',
-                    action  	: 'save',
-                    disabled	: true
-                },
-                {
-                    text		: 'Cancel',
-                    tooltip 	: 'Cancel adding this customer.',
-                    id			: 'add-customer-cancel',
-                    disabled	: true,
-                }
-            ]
-        }
-    ],
     
+    tbar	: [
+    	{
+	    	text		: 'Save',
+	    	operation	: 'save',
+	        tooltip		: 'Save this new customer.',
+	        disabled	: true,
+    	},
+    	{
+	    	text		: 'Cancel',
+	    	operation	: 'cancel',
+	        tooltip		: 'Cancel adding this customer.',
+	        disabled	: true
+	    }
+    ],
     initComponent	: function() {
         this.callParent(arguments);
     }
