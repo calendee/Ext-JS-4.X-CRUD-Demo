@@ -1,6 +1,7 @@
 Ext.define('DEMO.view.customers.CustomerAdd',{
     extend  : 'Ext.form.Panel',
     alias   : 'widget.CustomerAdd',
+    itemId	: 'customer-add',
 
     title   : 'Add Customer',
 
