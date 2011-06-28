@@ -36,16 +36,24 @@ Ext.define('DEMO.controller.CustomerAddController', {
     			var customer = Ext.create(model, form.getValues());
     			customer.save( {
     				success: function(record) {
+    					var custId = record.get('customers_id');
     					var fields = {
-    						customers_id	: record.get('customers_id'),
+    						customers_id	: custId,
     						customer_name	: record.get('customer_name'),
     						start_date		: record.get('start_date')
     					};
     					
     					// Add this customer to the list store for display
     					var listStore = Ext.data.StoreManager.lookup('CustomerListStore');
-    					listStore.add(fields);
+    					var newRecord = listStore.add(fields);
     					
+    					// Get the new ID from the store
+    					var currId = listStore.find('customers_id', custId)
+
+    					// Select the new customer in the list.
+						var grid = Ext.ComponentQuery.query('CustomerList');
+						grid[0].getSelectionModel().select(currId);
+						
     					// Rese the form for later use.  Focus will be moved elsewhere now.
     					form.reset();
 
