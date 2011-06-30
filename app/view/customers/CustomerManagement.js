@@ -11,9 +11,9 @@ Ext.define('DEMO.view.customers.CustomerManagement' ,{
 		{
 			xtype	: 'CustomerAdd'
 		},
-		// {
-			// xtype	: 'CustomerEdit'
-		// }
+		{
+			xtype	: 'CustomerEdit'
+		}
 	],
 
 	// Add the top toolbar

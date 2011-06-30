@@ -17,6 +17,7 @@ Ext.application({
 		'CustomerListController',
 		'VendorListController',
 		'CustomerAddController',
+		'CustomerEditController',
 		'VendorAddController'
     ],
 

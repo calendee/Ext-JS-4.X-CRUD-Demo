@@ -28,11 +28,18 @@ Ext.define('DEMO.controller.CustomerListController', {
 		
 		DEMO.selectedCustomersId = record.data.customers_id;
 
-		// Trigger a click of the customer edit button to open the form.		
+		// Trigger a click of the customer edit button to switch to  the edit form.		
 		var editBtn = Ext.ComponentQuery.query('CustomerManagementToolbar [operation="edit-customer"]');
 		if( editBtn[0] ) { 
 			editBtn[0].handler.call(editBtn[0].scope || editBtn[0], editBtn[0]); 
-		}  
+		}
+		
+		// Fire the customer selected event of the edit customer form.
+		var custEdit = Ext.ComponentQuery.query('CustomerEdit');
+		if( custEdit[0])
+		{
+			custEdit[0].fireEvent('customerSelected');
+		}
 		
 		// // Get the selected operators id and update all the operators forms.
 		// // Keep it in name space for use by other non-form based events
