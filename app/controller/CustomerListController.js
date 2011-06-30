@@ -24,10 +24,15 @@ Ext.define('DEMO.controller.CustomerListController', {
 
 
 	customerClicked: function(grid, record) {
-
 		enableToolbarButtons('CustomerManagementToolbar');
 		
 		DEMO.selectedCustomersId = record.data.customers_id;
+
+		// Trigger a click of the customer edit button to open the form.		
+		var editBtn = Ext.ComponentQuery.query('CustomerManagementToolbar [operation="edit-customer"]');
+		if( editBtn[0] ) { 
+			editBtn[0].handler.call(editBtn[0].scope || editBtn[0], editBtn[0]); 
+		}  
 		
 		// // Get the selected operators id and update all the operators forms.
 		// // Keep it in name space for use by other non-form based events
