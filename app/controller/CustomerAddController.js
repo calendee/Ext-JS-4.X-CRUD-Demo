@@ -54,10 +54,15 @@ Ext.define('DEMO.controller.CustomerAddController', {
 						var grid = Ext.ComponentQuery.query('CustomerList');
 						grid[0].getSelectionModel().select(currId);
 						
-    					// Rese the form for later use.  Focus will be moved elsewhere now.
+						var selRecord = grid[0].getSelectionModel().getSelection();
+						
+    					// Reset the form for later use.  Focus will be moved elsewhere now.
     					form.reset();
 
-						Ext.Msg.alert('Customer Saved', 'Please complete the customer details form.');    					
+						Ext.Msg.alert('Customer Saved', 'Please complete the customer details form.');  
+						
+						// Trigger the the click event for the new record on the customer list
+						grid[0].fireEvent('itemclick','', selRecord[0]);  					
     					
     				},
 					failure	: function(){
