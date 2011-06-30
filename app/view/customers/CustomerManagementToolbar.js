@@ -8,9 +8,9 @@ Ext.define('DEMO.view.customers.CustomerManagementToolbar' ,{
 	
     items		: [
         {
-            id			: 'btn-add-customer',
             text		: 'Add Customer',
 			disabled	: false,
+			operation	: 'add-customer',
 			
 			handler	: function() {
 				
@@ -28,8 +28,9 @@ Ext.define('DEMO.view.customers.CustomerManagementToolbar' ,{
 			}
         },
         {
-            id		: 'btn-edit-customer',
             text	: 'Edit Customer',
+			operation	: 'edit-customer',
+
 			handler	: function() {
 				
 				// Enable any other buttons in toolbar
@@ -38,13 +39,9 @@ Ext.define('DEMO.view.customers.CustomerManagementToolbar' ,{
 				// Disable this button while in use
 				this.setDisabled(true);
 
+				// Make the customer edit form panel the active card
+				// in the CustomerManagement view
 				custLayout.setActiveItem('customer-edit');
-				
-				// var customer_edit = Ext.ComponentQuery.query('CustomerEdit');
-				// Ext.Array.each(customer_edit, function(cmp){
-					// cmp.enable();
-				// });
-
 			}
         }
     ],
