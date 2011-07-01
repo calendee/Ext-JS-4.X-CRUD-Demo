@@ -7,13 +7,6 @@ Ext.define('DEMO.controller.CustomerEditController', {
 		'customers.CustomerEdit'
     ],
     
-	refs	: [{
-		 ref		:'CustomerEdit'
-		,selector	:'CustomerEdit'
-		}
-	],
-    
-
     init		: function() {
         this.control({
         	'CustomerEdit'	: {
@@ -31,32 +24,40 @@ Ext.define('DEMO.controller.CustomerEditController', {
     customerSelected : function(panel, options) {
 		// Load any existing record for the currently selected customer.
         var model = Ext.ModelMgr.getModel('DEMO.model.CustomerEditModel');
-        model.load(DEMO.selectedCustomersId);
+		var form = panel.getForm();
+
+        model.load(DEMO.selectedCustomersId, {
+		    success: function(customer) {
+	        	form.loadRecord(customer);
+
+				// Reset the form so it does not seem dirty.
+				var fields = form.getFields();
+				Ext.Array.each( fields.items, function(field) {
+					field.resetOriginalValue();
+				});
+
+    		}
+		});
     },
        
     onBtnClick	: function(btn, e) {
         var form = btn.up('form').getForm();
-        var model = Ext.ModelMgr.getModel('DEMO.model.CustomerEditModel');
         
     	switch(btn.operation) {
     		case 'save'		:
-    			var customer = Ext.create(model, form.getValues());
-    			customer.save( {
-    				success: function(record) {
-    					var fields = {
-    						customers_id	: record.get('customers_id'),
-    						customer_name	: record.get('customer_name'),
-    						start_date		: record.get('start_date')
-    					};
-    					
-						Ext.Msg.alert('Customer Details Saved', 'Thanks for filling out the form.');    					
-    					
-    				},
-					failure	: function(){
-						console.log('Failed to save the customer record.');
-		          	},
-    			})
-    			
+		        var record = form.getRecord();
+		        var values = form.getValues();
+		        record.set(values);
+
+		        var saved = record.save();
+		        form.loadRecord(saved);
+
+				// Reset the form so it does not seem dirty.
+				var fields = form.getFields();
+				Ext.Array.each( fields.items, function(field) {
+					field.resetOriginalValue();
+				});
+
     			break;
 
     		case 'cancel'	:

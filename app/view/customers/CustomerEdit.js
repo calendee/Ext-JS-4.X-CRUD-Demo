@@ -6,6 +6,7 @@ Ext.define('DEMO.view.customers.CustomerEdit',{
     title   : 'Edit Customer Details',
 
     bodyPadding : 10,
+    trackResetOnLoad    : true,
     
     
     items   : [
