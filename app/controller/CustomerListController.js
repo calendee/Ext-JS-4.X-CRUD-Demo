@@ -38,7 +38,7 @@ Ext.define('DEMO.controller.CustomerListController', {
 		var custEdit = Ext.ComponentQuery.query('CustomerEdit');
 		if( custEdit[0])
 		{
-			custEdit[0].fireEvent('customerSelected');
+			custEdit[0].fireEvent('customerSelected', custEdit[0]);
 		}
 		
 		// // Get the selected operators id and update all the operators forms.
