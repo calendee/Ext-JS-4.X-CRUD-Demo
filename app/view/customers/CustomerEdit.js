@@ -57,8 +57,8 @@ Ext.define('DEMO.view.customers.CustomerEdit',{
 			displayField	: 'state',
 			valueField		: 'abbr',
 			allowBlank      : false,
-			//mode			: 'remote',
-			queryMode		: 'local'
+			queryMode		: 'local',
+			forceSelection	: true
 		},
         {
             xtype           : 'textfield',
