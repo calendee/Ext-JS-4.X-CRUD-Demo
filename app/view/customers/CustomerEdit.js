@@ -68,8 +68,9 @@ Ext.define('DEMO.view.customers.CustomerEdit',{
             size            : 50,
             allowBlank      : false,
             dirtyCls        : 'dirtyfield',
-            maxLength       : 50,
-            maxLengthText   : 'The customer\'s city zip code cannot be more thn 10 characters.  Example : 11111-2222',
+            maskRe			: /[\d\-]/,
+            regex			: /^\d{5}\-\d{4}$/,
+            regexText		: 'The zip code must be in the format 12345-1234.'
         }                    
 
 
