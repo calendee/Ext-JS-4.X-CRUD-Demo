@@ -27,8 +27,6 @@ if( isset($_SESSION['details']) )
 {
 	if( ! isset( $_SESSION['details'][$customers_id] ) )
 	{
-		//$customers_id = $_SESSION['max_id'] + 1;
-
 		$empty_details['customers_id']	= $customers_id;
 		$empty_details['customer_name']	= '';
 		$empty_details['address']		= '';
