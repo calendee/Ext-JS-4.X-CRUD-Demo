@@ -49,17 +49,17 @@ Ext.define('DEMO.view.customers.CustomerEdit',{
             maxLength       : 50,
             maxLengthText   : 'The customer\'s city cannot be more than 25 characters',
         },                    
-        {
-            xtype           : 'textfield',
-            name            : 'state',
-            fieldLabel      : 'state',
-            emptyText		: 'Enter the new customer\'s city here.',
-            size            : 50,
-            allowBlank      : false,
-            dirtyCls        : 'dirtyfield',
-            maxLength       : 50,
-            maxLengthText   : 'Need a customer state drop down!',
-        },
+		{
+			xtype			: 'combobox',
+			name			: 'state',
+		    fieldLabel      : 'State',
+			store			: 'StatesStore',
+			displayField	: 'state',
+			valueField		: 'abbr',
+			allowBlank      : false,
+			//mode			: 'remote',
+			queryMode		: 'local'
+		},
         {
             xtype           : 'textfield',
             name            : 'zip',

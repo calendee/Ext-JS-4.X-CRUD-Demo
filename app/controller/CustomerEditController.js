@@ -1,7 +1,8 @@
 Ext.define('DEMO.controller.CustomerEditController', {
     extend		: 'Ext.app.Controller',
 
-    models	: ['CustomerEditModel'],
+    models	: ['CustomerEditModel','StatesModel'],
+    stores	: ['StatesStore'],
 
     views		: [
 		'customers.CustomerEdit'
