@@ -11,8 +11,8 @@ Ext.define('DEMO.controller.CustomerListController', {
     init	: function() {
         this.control({
 			'CustomerList' : {
-				itemclick	: this.customerClicked,
-				show		: this.loadList
+				show		: this.loadList,
+				selectionchange	: this.selectionChanged,
 			}
         });
     },
@@ -22,11 +22,10 @@ Ext.define('DEMO.controller.CustomerListController', {
     	list.getStore().load();
     },
 
-
-	customerClicked: function(grid, record) {
+	selectionChanged	: function(model,records) {
+		// records is an array of selected records.  Only one member
 		enableToolbarButtons('CustomerManagementToolbar');
-		
-		DEMO.selectedCustomersId = record.data.customers_id;
+		DEMO.selectedCustomersId = records[0].get('customers_id')
 
 		// Trigger a click of the customer edit button to switch to  the edit form.		
 		var editBtn = Ext.ComponentQuery.query('CustomerManagementToolbar [operation="edit-customer"]');
@@ -40,39 +39,6 @@ Ext.define('DEMO.controller.CustomerListController', {
 		{
 			custEdit[0].fireEvent('customerSelected', custEdit[0]);
 		}
-		
-		// // Get the selected operators id and update all the operators forms.
-		// // Keep it in name space for use by other non-form based events
-		// GSP.selectedOperatorsId = record.data.operators_id;
-// 		
-		// enableOperatorToolbarButtons();
-// 
-		// // Each time a different operator is selected, make sure the operator
-		// // management section is updated.
-		// var opMgmt = Ext.ComponentQuery.query('OperatorMgmt');
-		// var opMgmtActive = opMgmt[0].getLayout().getActiveItem();
-		// opMgmtActive.enable();
-// 		
-		// var operName = record.data.operators_name;
-// 		
-		// // Update all the panels with the name of the current operator
-		// var panels = Ext.ComponentQuery.query('OperatorMgmt  panel, form');
-// 		
-		// if( ! GSP.originalOperatorTitles.hasOwnProperty('origsSaved') )
-		// {
-			// originalTitles(panels, GSP.originalOperatorTitles);
-		// }
-// 		
-		// Ext.Array.each(panels, function(item) {
-			// var title = item.title;
-			// var xtype = item.xtype;
-// 			
-			// if(title !== 'Add Operator')
-			// {
-				// item.setTitle(GSP.originalOperatorTitles[xtype] + ' - ' + operName);
-			// }
-// 			
-		// });
+
 	}
-	
 });
