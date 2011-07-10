@@ -20,6 +20,7 @@ Ext.application({
 		'CustomerEditController',
 		'VendorAddController'
     ],
+    autoCreateViewport	: false,
 
     launch: function() {
         Ext.create('Ext.container.Viewport', {
