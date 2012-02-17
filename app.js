@@ -1,10 +1,11 @@
 // enable and configure loader
 Ext.Loader.setConfig({
-	 enabled:true
-	,paths:{
-		 Ext:'ext/src'
-		,My:'app'
-	}
+     enabled:true,
+
+     paths:{
+          Ext:'ext/src',
+          My:'app'
+     }
 });
 
 Ext.application({
