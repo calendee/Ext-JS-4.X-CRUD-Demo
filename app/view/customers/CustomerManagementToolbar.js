@@ -49,12 +49,17 @@ Ext.define('DEMO.view.customers.CustomerManagementToolbar' ,{
     initComponent	: function() {
 		this.callParent(arguments);
     },
-	
-	//  Ext 4.1 Change : It seems "afterRender" was replaced with "painted"
-	painted		: function() {
+
+	/**
+	 *	4.1b2 changes:
+	 *	This was previously "afterRender".  Changed to
+	 *	"beforeRender"  due to this post:
+	 *	http://www.sencha.com/forum/showthread.php?152929-API-Changes&highlight=afterrender
+	 */
+	beforeRender	: function() {
 		custPanel = Ext.ComponentQuery.query('CustomerManagement');
 		custLayout = custPanel[0].getLayout();
+		
 	}
-
-    
+	
 });
