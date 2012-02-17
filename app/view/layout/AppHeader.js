@@ -6,7 +6,6 @@ Ext.define('DEMO.view.layout.AppHeader' ,{
 
 	region: 'north',
 	height: 35,
-	xtype: 'box',
 
 	html	: 'XYZ Company - <span class="subtitle">Customer and Vendor Management</span>',
 
