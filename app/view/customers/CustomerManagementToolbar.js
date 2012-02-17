@@ -50,9 +50,11 @@ Ext.define('DEMO.view.customers.CustomerManagementToolbar' ,{
 		this.callParent(arguments);
     },
 	
-	afterRender		: function() {
+	//  Ext 4.1 Change : It seems "afterRender" was replaced with "painted"
+	painted		: function() {
 		custPanel = Ext.ComponentQuery.query('CustomerManagement');
 		custLayout = custPanel[0].getLayout();
 	}
+
     
 });
