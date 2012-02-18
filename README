@@ -17,4 +17,6 @@ Instructions:
 2. In your Apache webroot, create a symbolic link to /app/Ext-JS-4.X-CRUD-Demo
 3. In /app/Ext-JS-4.X-CRUD-Demo  create a symbolic link to the 4.1b2 version of ExtJS
     Example : ln -s /app/ext-4.1.0-beta-2/ ext
-4.  You should now be able to access the demo from your localhost in a browser.
+4.  See "directory_structure.png" for example of directory setup.
+5.  You should now be able to access the demo from your localhost in a browser.
+
