@@ -12,7 +12,7 @@ $vendors[] = array('vendors_id' => 4, 'vendor_name' => 'Avery Air Sucks',		'paym
 
 $vendor_list['vendors'] = $vendors;
 
-$vendor_list['totalCount']	= count( $vendor_list['customers'] );
+$vendor_list['totalCount']	= count( $vendor_list['vendors'] );
 
 echo json_encode($vendor_list);
 
