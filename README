@@ -2,12 +2,19 @@ Ext-JS-4.X-CRUD-Demo
 
 Simple MVC CRUD demo for ExtJS 4.X.
 
-Was originally working in ExtJS 4.0.X.
-
-Updated to now work with ExtJS 4.1 beta 2.
+Was originally working in ExtJS 4.0.X.  Updated to now work with ExtJS 4.1 beta 2.  Unfortunately, this broke 4.0.7 and below.  Sorry.
 
 This app is a demonstration of ExtJS MVC.  It uses a VERY simple php backend.  The backend uses sessions to manage adds, changes.  Again, this app is intended to demonstrate and learn ExtJS.  I am not trying to show how to create a PHP backend.
 
 The primary working portion of this app is the "Customer Management" section.  You can add and edit customers.
 
 The "Vendor Management" section does NOT work.  You will see a list of vendors.  However, you cannot add or edit vendors.  The "Vendor Management" section is just there to demonstrate the use of a tab panel.
+
+
+Instructions:
+1. Clone this repository to wherever you like.
+    Example : /app
+2. In your Apache webroot, create a symbolic link to /app/Ext-JS-4.X-CRUD-Demo
+3. In /app/Ext-JS-4.X-CRUD-Demo  create a symbolic link to the 4.1b2 version of ExtJS
+    Example : ln -s /app/ext-4.1.0-beta-2/ ext
+4.  You should now be able to access the demo from your localhost in a browser.
