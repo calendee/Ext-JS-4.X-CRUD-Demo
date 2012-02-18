@@ -8,12 +8,8 @@ Ext.define('DEMO.view.customers.CustomerAdd',{
     bodyPadding : 10,
 
     items   : [
-        {
-            xtype           : 'hiddenfield',
-            name            : 'customers_id',
-            id              : 'customers_id',
-            value			: 0
-        },
+		// NOTE : The form does NOT need the "customers_id" field
+		// It is not used by the model when creating the record
         {
             xtype           : 'textfield',
             name            : 'customer_name',
