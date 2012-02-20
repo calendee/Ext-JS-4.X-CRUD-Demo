@@ -53,9 +53,10 @@ Ext.define('DEMO.view.vendors.VendorManagementToolbar' ,{
 		this.callParent(arguments);
     },
 	
-	beforeRender		: function() {
+	afterRender		: function() {
 		var vendor_content_pnl = Ext.ComponentQuery.query('VendorManagement');
 		vendor_layout = vendor_content_pnl[0].getLayout();
+		this.callParent(arguments);		
 	}
     
 });

@@ -50,16 +50,11 @@ Ext.define('DEMO.view.customers.CustomerManagementToolbar' ,{
 		this.callParent(arguments);
     },
 
-	/**
-	 *	4.1b2 changes:
-	 *	This was previously "afterRender".  Changed to
-	 *	"beforeRender"  due to this post:
-	 *	http://www.sencha.com/forum/showthread.php?152929-API-Changes&highlight=afterrender
-	 */
-	beforeRender	: function() {
+	afterRender	: function() {
+		
 		custPanel = Ext.ComponentQuery.query('CustomerManagement');
 		custLayout = custPanel[0].getLayout();
-		
+		this.callParent(arguments);
 	}
 	
 });
