@@ -4,6 +4,8 @@ session_start();
 
 date_default_timezone_set('America/Chicago');
 
+error_reporting(E_ALL);
+ini_set( 'display_errors','1');
 
 if( isset($_GET['id']) )
 {
@@ -39,7 +41,7 @@ $final_details['success'] = true;
 $final_details['customer'] = $_SESSION['details'][$customers_id];
 
 
-if( $form_data->customer_name == 'Test Customer')
+if( isset($form_data->customer_name) && $form_data->customer_name == 'Test Customer')
 {
 	header('HTTP/1.1 500 Failed to Save Customer Details');
 	exit;
